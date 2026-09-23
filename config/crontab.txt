@@ -1,0 +1,1 @@
+*/2 * * * * /home/ec2-user/server-health-check.sh >> /home/ec2-user/logs/server-health-check.log 2>&1
