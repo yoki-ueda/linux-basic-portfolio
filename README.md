@@ -43,6 +43,4 @@ Mac
 
 ![Webページ公開](screenshots/01-web-page.png)
 
-### 障害対応・復旧
-
-![Apache障害対応・復旧](screenshots/03-apache-outage-recovery.png)
+障害対応の詳細は [`troubleshooting.md`](docs/troubleshooting.md) を参照。

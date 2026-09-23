@@ -68,3 +68,5 @@ HTTP Status : 200
 ```
 
 およびWebページの再表示を確認。
+
+![Apache障害対応・復旧](../screenshots/03-apache-outage-recovery.png) 
