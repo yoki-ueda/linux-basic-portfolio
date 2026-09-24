@@ -25,6 +25,8 @@ AWS EC2（Amazon Linux 2023）
    ├─ access_log
    └─ journalctl
 
+```
+
 ## 実施内容
 
 - MacからEC2へSSH接続
