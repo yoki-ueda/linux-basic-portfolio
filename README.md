@@ -5,37 +5,25 @@ Linuxの基本運用・監視・障害対応を実践したポートフォリオ
 
 **技術:** AWS EC2 / Amazon Linux 2023 / Apache / Bash / systemd / cron / SSH
 
-## 構成図
+## 構成
 
-```mermaid
-flowchart LR
-    Mac["Mac<br>ローカルPC"]
-    SG["Security Group"]
-
-    subgraph EC2["AWS EC2"]
-        Linux["Amazon Linux 2023"]
-        Apache["Apache httpd"]
-        Web["index.html"]
-        Systemd["systemd"]
-        Cron["cron"]
-        Script["server-health-check.sh"]
-        Logs["access_log / journalctl"]
-    end
-
-    Mac -->|"SSH :22"| SG
-    Mac -->|"HTTP :80"| SG
-
-    SG -->|"SSH :22"| Linux
-    SG -->|"HTTP :80"| Apache
-
-    Linux --> Apache
-    Apache --> Web
-
-    Systemd --> Apache
-    Cron --> Script
-    Script --> Apache
-    Apache --> Logs
-```
+```text
+Mac
+├─ SSH（22番ポート）
+└─ HTTP（80番ポート）
+    ↓
+AWS EC2（Amazon Linux 2023）
+├─ Apache Webサーバー
+│  └─ index.html を公開
+├─ systemd
+│  └─ Apacheの起動・停止・自動起動
+├─ Bash
+│  └─ server-health-check.sh
+├─ cron
+│  └─ ヘルスチェックを定期実行
+└─ ログ確認
+   ├─ access_log
+   └─ journalctl
 
 ## 実施内容
 
