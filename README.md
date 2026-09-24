@@ -1,7 +1,7 @@
 # Linux Basic Portfolio
 
 Amazon Linux 2023上にApache Webサーバーを構築し、
-Linuxの基本運用・監視・障害対応を実践したポートフォリオです。
+Linuxの基本運用、状態確認、ログ調査、障害対応を実践したポートフォリオです。
 
 **技術:** AWS EC2 / Amazon Linux 2023 / Apache / Bash / systemd / cron / SSH
 
