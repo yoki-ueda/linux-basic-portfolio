@@ -1,1 +1,6 @@
+# server-health-check.shを2分ごとに定期実行するcron設定
+# 実行結果はserver-health-check.logへ追記
+# 標準エラー出力も標準出力へまとめて記録し、異常時の確認に利用する
+# 学習・検証環境のため、動作確認しやすい2分間隔で設定
+
 */2 * * * * /home/ec2-user/server-health-check.sh >> /home/ec2-user/logs/server-health-check.log 2>&1

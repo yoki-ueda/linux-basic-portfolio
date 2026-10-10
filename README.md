@@ -34,8 +34,8 @@ AWS EC2（Amazon Linux 2023）
 - Apache Webサーバーの構築・自動起動設定
 - `ps`・`ss`・`curl` によるプロセス・ポート・HTTP確認
 - `access_log`・`journalctl` によるログ調査
-- Bashによるサーバーヘルスチェック作成
-- cronによる定期実行
+- Apache・80番ポート・ディスク・メモリ・HTTP応答を確認するBashヘルスチェックスクリプトを作成
+- cronでヘルスチェックスクリプトを定期実行し、実行結果をログへ出力
 
 ## 運用・障害対応
 
@@ -44,7 +44,9 @@ AWS EC2（Amazon Linux 2023）
 - `systemctl` → `ps` → `ss` → `journalctl` の順に切り分け
 - 復旧後に80番ポートのLISTEN、HTTP 200、Webページ表示を確認
 
-## 成果物
+障害対応の詳細は [`troubleshooting.md`](docs/troubleshooting.md) を参照。
+
+## 実装・検証資料
 
 - [`server-health-check.sh`](scripts/server-health-check.sh) - サーバー状態確認
 - [`crontab.txt`](config/crontab.txt) - 定期実行設定
@@ -53,8 +55,11 @@ AWS EC2（Amazon Linux 2023）
 
 ## 動作確認
 
-### Webページ公開
+ApacheによるWebページ公開、cron実行時のトラブルシューティング、
+Apache停止時の障害切り分け・復旧を確認しました。
 
 ![Webページ公開](screenshots/01-web-page.png)
 
-障害対応の詳細は [`troubleshooting.md`](docs/troubleshooting.md) を参照。
+![cronトラブルシューティング](screenshots/02-cron-troubleshooting.png)
+
+![Apache障害対応・復旧](screenshots/03-apache-outage-recovery.png)

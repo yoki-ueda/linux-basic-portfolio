@@ -1,5 +1,8 @@
 # Troubleshooting
 
+cron実行時のエラーとApache停止によるWebアクセス障害について、
+原因の切り分けから復旧まで確認しました。
+
 ## 1. cron実行時のPATH問題
 
 ### 事象
@@ -34,7 +37,7 @@ ss -tln | grep :80
 
 ### 事象
 
-障害対応の検証としてApacheを意図的に停止し、以下を確認。
+障害試験としてApacheを停止し、以下を確認しました。
 
 ```text
 Apache      : inactive
